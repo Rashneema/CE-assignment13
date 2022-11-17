@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>validate</title>
+        <script type="text/javascript">
+            function validate(){
+                var user=document.myform.t1.value;
+                var pwd=document.myform.t2.value;
+                var rpwd=document.myform.t3.value;
+
+                if(user==null || user=="" ){
+                    alert("please enter a valid user name")
+                    return false;
+                }
+                else if( user.length<8){
+                    alert("User name should have atleast 8 characters")
+                    return false;
+                }
+                else if(pwd==null || pwd=="" ){
+                    alert("password cannot be blank")
+                    return false;
+                }
+                else if( pwd.length<8){
+                    alert("password should have atleast 8 characters")
+                    return false;
+                }
+                if(rpwd==null || rpwd=="" ){
+                    alert("please re-enter password")
+                    return false;
+                }
+                else if( rpwd !=pwd){
+                    alert("passwords not matching")
+                    return false;
+                }
+                else if(pwd==rpwd){
+                    alert("Successfully signed in! ")
+                    return true;
+                }
+            return false;
+
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="next.html" onsubmit="return validate()">
+            User Name<input type="text" name="t1"><br>
+            Password <input type="password" name="t2"><br>
+            Re-Enter Password<input type="password" name="t3"><br>
+            <input type="submit" value="test" >
+
+        </form>
+       
+    </body>
+</html>
